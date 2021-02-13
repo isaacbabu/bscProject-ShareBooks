@@ -1,7 +1,15 @@
 # read-share
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+This is our BSc Computer Science Project done at Sri.C.Achuthamenon Govt College by-Isaac,Veena,Amala and Rince 
+
+An Intro...
+
+Do you like to have a web app where you can share and borrow old books?
+Then this is for you!
+Here in this web app you can find shared books.
+You can share and borrow books.
 
 ## Prerequisites
 
