@@ -1,0 +1,80 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <h1><b>ShareBooks</b></h1>
+    </a>
+    {{#if this.isLarge}}
+    
+       <a role="button" class="navbar-burger is-active" data-target="navMenu" aria-label="menu" aria-expanded="false" {{on "click" this.toggleSize}}> 
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+       </a>
+     
+    {{else}}
+    
+       <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" {{on "click" this.toggleSize}}>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+       </a>
+     
+    {{/if}}
+    
+  </div>
+  {{#if this.isLarge}}
+  <div class="navbar-menu is-active" id="navMenu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+
+        
+          <a class="navbar-item">
+            About
+          </a>
+
+         
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        
+      </div>
+    </div>
+    {{else}}
+    <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+
+        
+          <a class="navbar-item">
+            About
+          </a>
+
+         
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  
+</nav>
