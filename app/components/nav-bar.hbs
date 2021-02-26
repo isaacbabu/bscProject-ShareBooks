@@ -1,8 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <LinkTo @route="index" class="navbar-item">
       <h1><b>ShareBooks</b></h1>
-    </a>
+    </LinkTo>
     
     
       <a role="button" class="navbar-burger {{if this.isLarge "is-active"}}" data-target="navMenu" aria-label="menu" aria-expanded="false" {{on "click" this.toggleSize}}> 
@@ -22,14 +22,14 @@
 
 
         
-          <a class="navbar-item">
+          <LinkTo @route="about" class="navbar-item">
             About
-          </a>
+          </LinkTo>
 
          
-          <a class="navbar-item">
+          <LinkTo @route="issues" class="navbar-item">
             Report an issue
-          </a>
+          </LinkTo>
         
       </div>
     </div>
@@ -38,10 +38,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-info">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <a class="button is">
             Log in
           </a>
         </div>

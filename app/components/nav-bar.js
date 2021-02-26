@@ -9,3 +9,5 @@ export default class NavBarComponent extends Component {
       this.isLarge = !this.isLarge;
     }
 }
+
+
