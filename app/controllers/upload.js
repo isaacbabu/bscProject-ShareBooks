@@ -5,9 +5,11 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     actions: {
       postData() {
-        var e = document.getElementById("year");
-        var yearvalue = e.value;
-        var id=7;
+        var y = document.getElementById("year");
+        var yearvalue = y.value;
+        var d = document.getElementById("Dept");
+        var deptvalue = d.value;
+        var id=5;
         
         // get the input value from the .hbs template
         let title = this.get('title');
@@ -15,6 +17,7 @@ export default Controller.extend({
         let code = this.get('code');
         let year = yearvalue;
         let roll = this.get('roll');
+        let dept = deptvalue;
         // create a record in Ember Data (locally, would not survive page refresh)
         let newRecord = this.store.createRecord('book', {
             id: id,
@@ -22,7 +25,8 @@ export default Controller.extend({
             code: code,
             year: year,
             owner: owner,
-            roll: roll
+            roll: roll,
+            dept: dept
         })
         // Save the record to the API endpoint specified in adapters/application.js
         newRecord.save()

@@ -6,4 +6,5 @@ export default class IndexRoute extends Route {
     
   return this.store.findAll('book')
   }
+
 }
