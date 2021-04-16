@@ -23,6 +23,7 @@ export default Controller.extend({
         let year = yearvalue;
         let roll = this.get('roll');
         let dept = deptvalue;
+        let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
         // create a record in Ember Data (locally, would not survive page refresh)
         let newRecord = this.store.createRecord('book', {
             name: title,
@@ -30,7 +31,9 @@ export default Controller.extend({
             year: year,
             owner: owner,
             roll: roll,
-            dept: dept
+            dept: dept,
+            usercode: alphanum
+
         })
         // Save the record to the API endpoint specified in adapters/application.js
         newRecord.save()
