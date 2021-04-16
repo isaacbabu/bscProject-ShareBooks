@@ -10,5 +10,7 @@ Router.map(function () {
  this.route('about');
  this.route('issues');
  this.route('upload');
+ this.route('register');
+ this.route('delete');
 
 });
