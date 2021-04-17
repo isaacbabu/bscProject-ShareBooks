@@ -5,7 +5,9 @@ import book from '../models/book';
 
 export default Controller.extend({
   
+
     actions: {
+      
       
       postData() {
         var y = document.getElementById("year");
@@ -13,7 +15,10 @@ export default Controller.extend({
         var d = document.getElementById("Dept");
         var deptvalue = d.value;
 
-        
+        function toast()
+        {
+          alert('Your Upload code is<br>'+ alphanum+ 'Please remeber this code');
+        }
 
         
         // get the input value from the .hbs template
@@ -24,6 +29,8 @@ export default Controller.extend({
         let roll = this.get('roll');
         let dept = deptvalue;
         let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
+        
+
         // create a record in Ember Data (locally, would not survive page refresh)
         let newRecord = this.store.createRecord('book', {
             name: title,
@@ -37,10 +44,14 @@ export default Controller.extend({
         })
         // Save the record to the API endpoint specified in adapters/application.js
         newRecord.save()
+
+        toast();
+        
       },
       deleteData()
       {
-        let post = this.store.peekRecord('book', 16);
+        
+        let post = this.store.peekRecord('book', 30);
         post.deleteRecord();
         post.isDeleted; // => true
         post.save(); // => DELETE to /posts/1
@@ -49,4 +60,7 @@ export default Controller.extend({
     
 
     }
+    ,
+    
+    
   });

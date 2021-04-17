@@ -8,8 +8,15 @@
       Please fill the form and submit.
     </p>
   </div>
+  <div class="has-text-right subtitle link">
+             <LinkTo @route="deletebooks" class="has-text-link is-size-6">
+            Delete your uploaded books>
+            </LinkTo> 
+
+  </div>
 </section>
 <br>
+<AlertModel></AlertModel>
 <section>
   <container>
   <div class="field">
@@ -87,13 +94,6 @@
     </div>
   </div>
 
-    <div class="field">
-    <label class="label">Security Password </label>
-    <div class="control">
-      {{input class="input" type="text" value=password  placeholder="Enter a password for protection"}}
-    </div>
-    <p class="help">Enter a password to protect your book.If you already have one, don't create a new one and don't share passwords with anyone</p>
-  </div>
 
   <div class="field is-grouped">
   <p class="control">
@@ -110,6 +110,7 @@
   </container>
 </section>
 <section>
->
+
+><p>{{dynamic}}</p>
 </section>
 </container>
