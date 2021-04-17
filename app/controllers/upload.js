@@ -29,10 +29,12 @@ export default Controller.extend({
         let roll = this.get('roll');
         let dept = deptvalue;
         let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
+        let id = code%100000000
         
 
         // create a record in Ember Data (locally, would not survive page refresh)
         let newRecord = this.store.createRecord('book', {
+            id: id,
             name: title,
             code: code,
             year: year,

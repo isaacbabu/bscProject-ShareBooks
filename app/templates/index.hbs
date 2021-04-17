@@ -27,34 +27,5 @@
 </div>
 </container>
 </section>
-<section class="section"> 
-  <div class="container">
 
-    <div class="columns is-mobile">
-      <div class="column is-one-fifth"><p class="heading">SL No</p></div>
-      <div class="column"><p class="heading">Book Title</p></div>
-      <div class="column"><p class="heading">Owner</p></div>
-      <div class="column"><p class="heading">Year</p></div>
-      <div class="column"><p class="heading">Roll No</p></div>
-      <div class="column"><p class="heading">Actions</p></div>
-    </div>
-  
-{{#each this.model as |book|}}
-    <div class="columns is-mobile">
-   
-      <div class="column is-one-fifth"><strong><p class="">{{book.id}}</p></strong></div>
-      <div class="column"><strong><p class="">{{book.name}}</p></strong></div>
-      <div class="column"><strong><p class="">{{book.owner}}</p></strong></div>
-      <div class="column"><strong><p class="">{{book.year}}</p></strong></div>
-      <div class="column"><strong><p class="">{{book.roll}}</p></strong></div>
-      <div class="column">
-        <div class="buttons is-centered">
-         <button class="button is-link is-small">Get Details</button>
-        </div>
-      </div>
-      
-    </div>
-{{/each}}
-</div>
-</section>
 

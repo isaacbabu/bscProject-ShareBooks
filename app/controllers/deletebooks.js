@@ -18,6 +18,7 @@ export default Controller.extend({
         post.deleteRecord();
         post.isDeleted; // => true
         post.save(); // => DELETE to /posts/1
+        alert('Delete Success');
         
       }
     
