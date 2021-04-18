@@ -1,13 +1,18 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 import book from '../models/book';
 // a controller is a place to define 'actions', such as the things that should happen
 // when a user clicks a button to create/read/edit/delete a record
 
 export default Controller.extend({
   
-
+    
     actions: {
-      
+
+      toggleSize(){
+        const activeDiv = document.querySelector('.modal');
+        activeDiv.classList.toggle('is-active');
+      },
       
       postData() {
         var y = document.getElementById("year");
@@ -16,8 +21,15 @@ export default Controller.extend({
         var deptvalue = d.value;
 
         function toast()
+
         {
-          alert('Your Upload code is<br>'+ alphanum+ 'Please remeber this code');
+          
+          
+          const activeDiv = document.querySelector('#alert-id');
+          activeDiv.textContent = alphanum;
+          const activeDiv2 = document.querySelector('.modal');
+          activeDiv2.classList.add('is-active'); 
+          
         }
 
         
@@ -29,7 +41,12 @@ export default Controller.extend({
         let roll = this.get('roll');
         let dept = deptvalue;
         let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
-        let id = code%100000000
+        let phone = this.get('phone');
+        let bookyear = this.get('bookyear');
+        let author = this.get('author');
+        let email = this.get('email');
+        let id = Math.floor(code/10000000);
+        let uid = Math.floor(phone/1000);
         
 
         // create a record in Ember Data (locally, would not survive page refresh)
@@ -44,8 +61,27 @@ export default Controller.extend({
             usercode: alphanum
 
         })
+        let newBookRecord = this.store.createRecord('bookdetail',{
+          id: id,
+          name: title,
+          author: author,
+          bookid:code,
+          year: bookyear
+        })
+        let newUserRecord = this.store.createRecord('user',{
+          id: uid,
+          usersname: owner,
+          usersemail: email,
+          usersphone: phone,
+          usersdept: dept,
+          usersyear: year,
+          usersroll: roll
+        })
         // Save the record to the API endpoint specified in adapters/application.js
-        newRecord.save()
+        newRecord.save();
+        newBookRecord.save();
+        newUserRecord.save();
+
 
         toast();
         

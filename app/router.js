@@ -12,4 +12,5 @@ Router.map(function () {
   this.route('upload');
   this.route('register');
   this.route('deletebooks');
+  this.route('bookdetail', {path: '/bookdetails/:book_id'});
 });
