@@ -41,12 +41,13 @@ export default Controller.extend({
         let roll = this.get('roll');
         let dept = deptvalue;
         let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
-        let phone = this.get('phone');
+        
         let bookyear = this.get('bookyear');
         let author = this.get('author');
-        let email = this.get('email');
-        let id = Math.floor(code/10000000);
-        let uid = Math.floor(phone/1000);
+        
+        let id = Math.floor(code+roll+year/10000);
+        
+        
         
 
         // create a record in Ember Data (locally, would not survive page refresh)
@@ -68,37 +69,25 @@ export default Controller.extend({
           bookid:code,
           year: bookyear
         })
-        let newUserRecord = this.store.createRecord('user',{
-          id: uid,
-          usersname: owner,
-          usersemail: email,
-          usersphone: phone,
-          usersdept: dept,
-          usersyear: year,
-          usersroll: roll
-        })
+        
+        
+        
+
+        
         // Save the record to the API endpoint specified in adapters/application.js
         newRecord.save();
         newBookRecord.save();
-        newUserRecord.save();
+        
 
 
         toast();
         
-      },
-      deleteData()
-      {
-        
-        let post = this.store.peekRecord('book', 30);
-        post.deleteRecord();
-        post.isDeleted; // => true
-        post.save(); // => DELETE to /posts/1
-        
       }
+
     
 
     }
-    ,
+    
     
     
   });

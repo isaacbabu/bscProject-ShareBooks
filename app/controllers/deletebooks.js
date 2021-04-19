@@ -11,16 +11,21 @@ export default Controller.extend({
       
       deleteData()
       {
-       let key=this.get('model');
+       let bookkey=this.get('book');
+       let bookdetailkey=this.get('bookdetail');
        let code=this.get('alphanum');
-       let record=key.findBy('usercode',code);
-       let post = this.store.peekRecord('book', record.id);
+       let bookrecord=bookkey.findBy('usercode',code);
+       let bookdetailrecord=bookdetailkey.findBy('id',bookrecord.id);
+       
         
-        post.deleteRecord();
+        bookrecord.deleteRecord();
+        bookdetailrecord.deleteRecord();
       
-        post.isDeleted; // => true
+        bookrecord.isDeleted; // => true
+        bookdetailrecord.isDeleted;
         
-        post.save(); // => DELETE to /posts/1
+        bookrecord.save(); // => DELETE to /posts/1
+        bookdetailrecord.save();
         
         
         alert('Book Deleted');
