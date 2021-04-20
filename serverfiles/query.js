@@ -138,3 +138,10 @@ module.exports = {
   deleteUsers
 
 }
+/*
+Psql Quries to create databases tables and users
+
+CREATE TABLE books(id bigint, name varchar(50), code bigint, year int, owner varchar(50), roll int, dept varchar(50), usercode varchar(50) );
+
+CREATE TABLE bookdetails(id bigint, name varchar(50), author varchar(50), bookid bigint, year int);
+*/

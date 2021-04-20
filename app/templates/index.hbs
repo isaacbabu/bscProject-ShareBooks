@@ -9,24 +9,4 @@
   </div>
 </section>
 <br>
-<section>
-<container>
-<div class="columns">
-<div class="column">
-
-
-{{#each this.model as |book|}}
-<Tile>
-    
-     <div class="title is-4">{{book.name}}</div>
-     <div class="is-family-monospace is-semi-bold has-text-link">Borrow From</div>
-     <p class="subtitle is-5 has-text-weight-medium">{{book.owner}} &ensp;|&ensp;   {{book.dept}} Department Year {{book.year}}  &ensp; |&ensp; Roll No {{book.roll}}</p>
-     <button class="button is-small is-link"><LinkTo @route="bookdetail" @model={{book.id}}>Get More Details</LinkTo></button>
-  </Tile>
-{{/each}}
-</div>
-</div>
-</container>
-</section>
-
-
+<Books @books={{model}} />
