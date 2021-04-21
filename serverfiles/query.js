@@ -139,9 +139,23 @@ module.exports = {
 
 }
 /*
-Psql Quries to create databases tables and users
+---Psql Quries to create databases, tables and users for first time running---
+First login to psql shell using default user.
+Then insert the following queries..
+1.
+CREATE DATABASE bscproject;
+2.
+CREATE USER isaac WITH	LOGIN	SUPERUSER	CREATEDB	CREATEROLE	INHERIT	NOREPLICATION	PASSWORD 'isaac';
+(You can use your own name and password but dont forget to change the name and password accordingly at the top of this file)
+3.
+GRANT ALL PRIVILEGES ON DATABASE bscproject TO isaac;
 
+---- Quit or Exit from the current user and switch to the newly created user isaac with the database bscproject. In Linux it can be done by the command psql -d bscproject -U isaac (After exiting psql shell) ----
+
+
+4.
 CREATE TABLE books(id bigint, name varchar(50), code bigint, year int, owner varchar(50), roll int, dept varchar(50), usercode varchar(50) );
-
+5.
 CREATE TABLE bookdetails(id bigint, name varchar(50), author varchar(50), bookid bigint, year int);
+That all you can now start the server by typing node index.js 
 */
