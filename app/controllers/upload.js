@@ -40,6 +40,8 @@ export default Controller.extend({
         let year = yearvalue;
         let roll = this.get('roll');
         let dept = deptvalue;
+        let phone = this.get('phone');
+        let email = this.get('email');
         let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
         
         let bookyear = this.get('bookyear');
@@ -67,7 +69,9 @@ export default Controller.extend({
           name: title,
           author: author,
           bookid:code,
-          year: bookyear
+          year: bookyear,
+          phone: phone,
+          email: email
         })
         
         

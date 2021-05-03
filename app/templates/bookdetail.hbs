@@ -1,14 +1,19 @@
 <container>
-    <div class="title">Book Details</div>
+<div class="title">Book Details</div>
 <div class="columns">
 <div class="column">
 
 
     <Tile>
     
-     <div class="title is-4">{{model.name}}<br> By {{model.author}} </div>
+     <div class="title is-3">{{model.name}}<br> <p class="sub-title is-size-6">By</p> <p class="is-size-5">{{model.author}}</p> </div>
      
-     <p class="has-text-weight-medium">ISBN Code:{{model.bookid}} <br>Year <strong>{{model.year}}</strong></p>
+     <p class="has-text-weight-medium">ISBN Code: {{model.bookid}} <br>Print Year: <strong>{{model.year}}</strong></p>
+     <div>
+         <p class="is-size-4">Contact Details</p>
+         <p class="is-size-6">Phone</p><p class="is-size-6 has-text-weight-medium">{{model.phone}}</p>
+         <p class="is-size-6">Email</p><p class="is-size-6 has-text-weight-medium">{{model.email}}</p>
+     </div>
      </Tile>
   
 
