@@ -4,7 +4,7 @@ export default DS.Model.extend({
     code: DS.attr(),
     year: DS.attr(),
     owner: DS.attr(),
-    roll: DS.attr(),
+    admin: DS.attr(),
     dept: DS.attr(),
     usercode: DS.attr()
    });

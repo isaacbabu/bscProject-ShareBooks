@@ -71,9 +71,9 @@ const createUser = (request, response) => {
   })
 }
 const createBooks = (request, response) => {
-  const { id, name, code, year, owner, roll, dept, usercode } = request.body.book
+  const { id, name, code, year, owner, admin, dept, usercode } = request.body.book
 
-  pool.query('INSERT INTO books (id, name, code, year, owner, roll, dept, usercode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [id, name, code, year, owner, roll, dept, usercode], (error, results) => {
+  pool.query('INSERT INTO books (id, name, code, year, owner, admin, dept, usercode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [id, name, code, year, owner, admin, dept, usercode], (error, results) => {
     if (error) {
       throw error
     }

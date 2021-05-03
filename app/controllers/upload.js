@@ -38,16 +38,16 @@ export default Controller.extend({
         let owner = this.get('name');
         let code = this.get('code');
         let year = yearvalue;
-        let roll = this.get('roll');
+        let admin = this.get('admin');
         let dept = deptvalue;
         let phone = this.get('phone');
         let email = this.get('email');
-        let alphanum=roll*10+dept[0]+year+owner[0]+title[0];
+        let alphanum=title[0]+dept[0]+admin+owner[0];
         
         let bookyear = this.get('bookyear');
         let author = this.get('author');
         
-        let id = Math.floor(code+roll+year/10000);
+        let id = Math.floor(code+admin+year/1000000);
         
         
         
@@ -59,7 +59,7 @@ export default Controller.extend({
             code: code,
             year: year,
             owner: owner,
-            roll: roll,
+            admin: admin,
             dept: dept,
             usercode: alphanum
 
