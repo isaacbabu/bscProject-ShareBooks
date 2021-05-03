@@ -26,10 +26,28 @@ export default Controller.extend({
           
           
           const activeDiv = document.querySelector('#alert-id');
-          activeDiv.textContent = alphanum;
+          activeDiv.textContent = secureCode;
           const activeDiv2 = document.querySelector('.modal');
           activeDiv2.classList.add('is-active'); 
           
+        }
+        function getRandomInt(n) {
+          return Math.floor(Math.random() * n);
+        }
+        function shuffle(s) {
+          var arr = s.split('');           // Convert String to array
+          var n = arr.length;              // Length of the array
+          
+          for(var i=0 ; i<n-1 ; ++i) {
+            var j = getRandomInt(n);       // Get random of [0, n-1]
+            
+            var temp = arr[i];             // Swap arr[i] and arr[j]
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+          
+          s = arr.join('');                // Convert Array to string
+          return s;                        // Return shuffled string
         }
 
         
@@ -42,12 +60,12 @@ export default Controller.extend({
         let dept = deptvalue;
         let phone = this.get('phone');
         let email = this.get('email');
-        let alphanum=title[0]+dept[0]+admin+owner[0];
-        
+        let randomNumber = Math.floor(Math.random() * 100);
+        let alphanum=title[0]+dept[0]+randomNumber+owner[0];
+        let secureCode= shuffle(alphanum);
         let bookyear = this.get('bookyear');
         let author = this.get('author');
-        
-        let id = Math.floor(code+admin+year/1000000);
+        let id = code+admin+year;
         
         
         
@@ -61,7 +79,7 @@ export default Controller.extend({
             owner: owner,
             admin: admin,
             dept: dept,
-            usercode: alphanum
+            usercode: secureCode
 
         })
         let newBookRecord = this.store.createRecord('bookdetail',{
