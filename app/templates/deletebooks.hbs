@@ -1,4 +1,20 @@
 <container>
+  <div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"> <div id="confirm-title" ></div></p>
+      <button class="delete" aria-label="close" {{action 'toggleModal'}}></button>
+    </header>
+    <section class="modal-card-body">
+      <div id="confirm-body" ></div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-danger" id="confirmButton" {{action 'deleteData'}}>Confirm Delete</button>
+      <button class="button" {{action 'toggleModal'}}>Cancel</button>
+    </footer>
+  </div>
+</div>
 <section>
   <container>
   <div class="field">
@@ -13,7 +29,7 @@
 
   <div class="field is-grouped">
   <p class="control">
-    <a class="button is-danger" role="button" {{action 'deleteData'}}>
+    <a class="button is-danger" role="button" {{action 'confirm'}}>
       Delete
     </a>
   </p>

@@ -9,7 +9,7 @@ export default Controller.extend({
     
     actions: {
 
-      toggleSize(){
+      toggleModal(){
         const activeDiv = document.querySelector('.modal');
         activeDiv.classList.toggle('is-active');
       },
