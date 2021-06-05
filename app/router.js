@@ -9,7 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('about');
   this.route('upload');
-  this.route('register');
   this.route('deletebooks');
   this.route('bookdetail', {path: '/bookdetails/:book_id'});
 });
