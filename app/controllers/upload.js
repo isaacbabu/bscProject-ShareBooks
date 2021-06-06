@@ -65,7 +65,7 @@ export default Controller.extend({
         let secureCode= shuffle(alphanum);
         let bookyear = this.get('bookyear');
         let author = this.get('author');
-        let id = code+admin;
+        let id = Math.floor(code+admin);
         
         
         
