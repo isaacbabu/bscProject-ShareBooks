@@ -2,7 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const db = require('./query.js')
-const port = 3000
+const port = process.env.port || 3000;
+app.listen(port,function () {
+  console.log("server started successfully");
+
+});
 
 app.use(bodyParser.json())
 app.use(

@@ -3,13 +3,23 @@
   "version": "1.0.0",
   "description": "bscproject backend",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
   "author": "isaac",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.5.1"
+  },
+  "scripts":{
+    "test": "echo \"Error no test specified\" && exit 1 ",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "14.17.0",
+    "npm": "6.14.13"
+    
+
   }
+
+
 }
