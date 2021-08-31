@@ -12,7 +12,7 @@ app.use(
 
 )
 app.get('/',(request, response) => {
-  response.json({ info: 'read-share backend service using express and postgres'})
+  response.json({ info: 'share-books backend service using express and postgres'})
 })
 
 app.get('/users',db.getUsers)

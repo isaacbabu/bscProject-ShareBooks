@@ -157,5 +157,5 @@ GRANT ALL PRIVILEGES ON DATABASE bscproject TO isaac;
 CREATE TABLE books(id bigint, name varchar(50), code bigint, year int, owner varchar(50), roll int, dept varchar(50), usercode varchar(50) );
 5.
 CREATE TABLE bookdetails(id bigint, name varchar(50), author varchar(50), bookid bigint, year int);
-That all you can now start the server by typing node index.js 
+That all you can now start the server by typing node index.js
 */
